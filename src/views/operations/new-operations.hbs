@@ -1,0 +1,25 @@
+<div class="form-control">
+    <div class="card text-center">
+        <div class="card-header">
+            <h3>Nueva Operación</h3>
+        </div>
+        <div class="card-body">
+            <form action="/operations/new-operations/{{note._id}}" method="POST">
+                <div class=" form-group">
+                    <input name="name" class="form-control" placeholder="Nombre de la operación"></input>
+                </div>
+                <div class="form-group">
+                    <input name="description" class="form-control" placeholder="Descripción de la operación"></input>
+                </div>
+                <div class="form-group">
+                    <input name="date" class="form-control" placeholder="Fecha : DD/MM/AA"></input>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" type="submit">
+                        Guardar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+{{#each errors}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{text}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/each}}
+
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h3>Editas información</h3>
+        </div>
+        <div class="card-body">
+            <form action="/users/edit-user/{{userE._id}}?_method=PUT" method="POST">
+                <input type="hidden" name="_method" value="PUT">
+
+                <div class="form-group">
+                    <h4>Nombre:</h4>
+                    <h4 name="rut" class="form-control">{{userE.name}}</h4>
+                </div>
+
+                <div class="form-group">
+                    <h4>RUT:</h4>
+                    <h4 name="rut" class="form-control">{{userE.rut}}</h4>
+                </div>
+
+                <div class="form-group">
+                    <h4>Ciudad:</h4>
+                    <input type="text" name="city" class="form-control" value="{{userE.city}}" />
+                </div>
+
+                <div class="form-group">
+                    <h4>Dirección:</h4>
+                    <input type="text" name="address" class="form-control" value="{{userE.address}}" />
+                </div>
+
+                <div class="form-group">
+                    <h4>Email:</h4>
+                    <input type="text" name="email" class="form-control" value="{{userE.email}}" />
+                </div>
+
+                <div class="form-group">
+                    <h4>Teléfono:</h4>
+                    <input type="text" name="phone" class="form-control" value="{{userE.phone}}" />
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" type="submit">
+                        Guardar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

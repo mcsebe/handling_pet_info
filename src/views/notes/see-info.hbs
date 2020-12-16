@@ -1,0 +1,49 @@
+{{#each errors}}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{text}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/each}}
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h3>Registro</h3>
+        </div>
+        <div class="card-body">
+            <form action="/notes" method="POST">
+                <input type="hidden" name="_method" value="PUT">
+                <div class="form-group">
+                    <h4>Nombre:</h4>
+                    <h5>{{note.name_pet}}</h5>
+                    <hr style="width:100%;">
+                </div>
+
+                <div class="form-group">
+                    <h4>Nombre del dueño:</h4>
+                    <h5>{{user2.name}}</h5>
+                    <hr style="width:100%;">
+                </div>
+
+                <div class="form-group">
+                    <h4>Dirección:</h4>
+                    <h5>{{user2.address}}</h5>
+                    <h5>{{user2.city}}</h5>
+                    <hr style="width:100%;">
+                </div>
+                <div class="form-group">
+                    <h4>Número de contacto:</h4>
+                    <h5>{{user2.phone}}</h5>
+                    <hr style="width:100%;">
+                </div>
+                <div class="form-group">
+                    <h4>Correo electrónico:</h4>
+                    <h5>{{user2.email}}</h5>
+                    <hr style="width:100%;">
+                </div>
+                <div class="form-group">
+            </form>
+        </div>
+    </div>
+</div>

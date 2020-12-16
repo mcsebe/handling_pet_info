@@ -1,0 +1,132 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Registro</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/notes" method="POST">
+                        <input type="hidden" name="_method" value="PUT">
+                        <div class="form-group">
+                            <h4>Nombre:</h4>
+                            <h5>{{note.name_pet}}</h5>
+                            <hr style="width:100%;">
+                        </div>
+                        <div class="form-group">
+                            <h4>Tipo de animal:</h4>
+                            <h5>{{note.type_pet}}</h5>
+                            <hr style="width:100%;">
+                        </div>
+                        <div class="form-group">
+                            <h4>Raza:</h4>
+                            <h5>{{note.breed_pet}}</h5>
+                            <hr style="width:100%;">
+                        </div>
+                        <div class="form-group">
+                            <h4>Marca distintiva:</h4>
+                            <h5>{{note.mark}}</h5>
+                            <hr style="width:100%;">
+                        </div>
+                        <div class="form-group">
+                            <h4>Color:</h4>
+                            <h5>{{note.color}}</h5>
+                            <hr style="width:100%;">
+                        </div>
+                        <div class="form-group">
+                            <h4>Fecha de nacimiento:</h4>
+                            <h5>{{note.date_born}}</h5>
+                            <hr style="width:100%;">
+                        </div>
+                        <div class="form-group">
+                            <h4>Observaciones médicas:</h4>
+                            <h5>{{note.obs_med}}</h5>
+                            <hr style="width:100%;">
+                        </div>
+                    </form>
+                    {{#if userType}}
+                    <form action="javascript: history.go(-1)">
+                        <button type="submit" class="btn btn-primary btn-block btn-sm">Volver</button>
+                    </form>
+                    {{else}}
+                    <form action="/notes">
+                        <button type="submit" class="btn btn-primary btn-block btn-sm">Volver</button>
+                    </form>
+                    {{/if}}
+                </div>
+                <div align="center"><img width='300px' height='300px' src="/img/{{note._id}}.png"></div>
+
+            </div>
+        </div>
+
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Vacunas</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/notes" method="POST">
+                        {{#each vaccines }}
+
+                        <div class="form-group">
+                            <h5>Vacuna:</h5>
+                            <h6>{{name}}</h6>
+                            <hr style="width:100%;">
+                        </div>
+                        <div class="form-group">
+                        </div>
+                        <div class="form-group">
+                            <h5>Fecha:</h5>
+                            <h6>{{date}}</h6>
+                            <hr style="width:100%;">
+                        </div>
+
+                        {{/each}}
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Operaciones</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/notes" method="POST">
+                        {{#each operations }}
+
+                        <div class="form-group">
+                            <h5>Operación:</h5>
+                            <h6>{{name}}</h6>
+                            <hr style="width:100%;">
+                        </div>
+                        <div class="form-group">
+                        </div>
+
+                        <div class="form-group">
+                            <h5>Descripción:</h5>
+                            <h6>{{description}}</h6>
+                            <hr style="width:100%;">
+                        </div>
+                        <div class="form-group">
+                        </div>
+
+                        <div class="form-group">
+                            <h5>Fecha:</h5>
+                            <h6>{{date}}</h6>
+                            <hr style="width:100%;">
+                        </div>
+                        <div class="form-group">
+                        </div>
+
+                        {{/each}}
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

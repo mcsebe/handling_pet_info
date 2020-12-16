@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <img width='10%' height='10%' src="/img/info2.jpg">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="navbar-brand" href="/"><i class="fas fa-home"></i> <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about"><i class="fas fa-envelope"></i><i class="fab fa-mailchimp"></i></a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        {{#if user}}
+        {{#if userType}}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Menú
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/notes/add">Añadir un registro ‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎<i
+                class="fas fa-pencil-alt"></i></a>
+            <a class="dropdown-item" href="/users/signup">Crear un nuevo usuario ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎<i
+                class="fas fa-user"></i></a>
+            <a class="dropdown-item" href="/search">Buscar a un usuario‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎<i
+                class="fas fa-search"></i></a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/users/logout">Cerrar sesión ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎<i
+                class="fas fa-sign-in-alt"></i></a>
+          </div>
+        </li>
+        {{else}}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Menú
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/notes">Todos tus registros‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎<i
+                class="fas fa-copy"></i></a>
+            <a class="dropdown-item" href="/users/edit/{{userID}}">Editar datos‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎<i
+                class="fas fa-user-edit"></i></a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/users/logout">Cerrar sesión ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎<i
+                class="fas fa-sign-in-alt"></i></a>
+          </div>
+        </li>
+        {{/if}}
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link" href="/users/signin">iniciar sesión‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎ ‏‏‎‎<i
+              class="fas fa-users"></i></a>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>
